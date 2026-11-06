@@ -1,0 +1,28 @@
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#eaf1f7;--panel:#ffffff;--ink:#0e1f2e;--dim:#52687a;--line:#c5d4e0;--c1:#0a7a9a;--c2:#d4400a;--grid:#d5e1ea}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#060b14;--panel:#0b1422;--ink:#e6f1ff;--dim:#7d93ab;--line:#1c2d44;--c1:#35d3ff;--c2:#ffb020;--grid:#12213a}}
+:root[data-theme="dark"]{--bg:#060b14;--panel:#0b1422;--ink:#e6f1ff;--dim:#7d93ab;--line:#1c2d44;--c1:#35d3ff;--c2:#ffb020;--grid:#12213a}
+html{scroll-padding-top:env(safe-area-inset-top,0px);color-scheme:light dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Space Grotesk","Trebuchet MS",sans-serif;padding:18px 14px 28px}
+main{max-width:980px;margin:0 auto}
+h1{font-size:clamp(1.8rem,5vw,2.8rem);margin:0 0 6px;letter-spacing:-.02em}
+header p{margin:0 0 16px;color:var(--dim);max-width:56ch;line-height:1.5}
+.wrap{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+#scope{display:block;width:100%;height:min(46vh,420px);min-height:300px}
+#info{position:absolute;left:14px;top:12px;font-size:.9rem;color:var(--dim);pointer-events:none;max-width:60%}
+#info b{color:var(--c2);font-size:1.5rem;font-weight:700}
+#spec{display:block;width:100%;height:110px;margin-top:10px;background:var(--panel);border:1px solid var(--line);border-radius:10px;cursor:pointer}
+.hint{margin:6px 2px 14px;color:var(--dim);font-size:.85rem}
+.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+.ctl{display:flex;flex-direction:column;gap:8px;font-size:.9rem;color:var(--dim)}
+.seg{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.seg button{flex:1;border:0;border-right:1px solid var(--line);background:transparent;color:var(--ink);padding:9px 4px;font:inherit;cursor:pointer}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:var(--c1);color:var(--bg);font-weight:700}
+input[type=range]{width:100%;accent-color:var(--c1);height:28px}
+button.pill{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:10px;padding:9px 12px;font:inherit;cursor:pointer}
+button:focus-visible,input:focus-visible{outline:2px solid var(--c1);outline-offset:2px}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.row .pill{flex:1}
+.cap{margin:14px 2px 0;color:var(--dim);line-height:1.5;max-width:70ch}

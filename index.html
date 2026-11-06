@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fourier Lab</title>
+<meta name="description" content="Interactive Fourier series demo: build square, sawtooth and triangle waves from spinning circles, and hear them.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%80%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head><body><main>
+<header><h1>Fourier Lab</h1>
+<p>Any repeating wave is a stack of spinning circles. Pick a wave, add circles, and watch the sharp corners appear.</p></header>
+<div class="wrap"><canvas id="scope" role="img" aria-label="Spinning circles drawing a waveform"></canvas><div id="info"></div></div>
+<canvas id="spec" role="img" aria-label="Amplitude of each circle"></canvas>
+<div class="hint">Each bar is one circle. Click a bar to use that many circles.</div>
+<section class="controls">
+<div class="ctl">Wave<div class="seg" id="waves">
+<button data-w="square" aria-pressed="true">Square</button><button data-w="saw" aria-pressed="false">Sawtooth</button><button data-w="tri" aria-pressed="false">Triangle</button></div></div>
+<label class="ctl">Circles: <span id="nv">5</span><input id="n" type="range" min="1" max="24" value="5"></label>
+<label class="ctl">Speed<input id="sp" type="range" min="0.2" max="3" step="0.1" value="1"></label>
+<div class="ctl">View<div class="row"><button class="pill" id="play">Pause</button><button class="pill" id="snd" aria-pressed="false">Sound on</button><button class="pill" id="circ" aria-pressed="true">Hide circles</button></div></div>
+</section>
+<p class="cap" id="cap"></p>
+</main>
+<script src="script.js"></script>
+</body></html>
